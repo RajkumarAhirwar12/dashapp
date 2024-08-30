@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Spending Dashboard</title>
+</head>
+<body>
+    <h1>User Spending Dashboard</h1>
+    <h2>Top 3 Users by Spending</h2>
+    <ul>
+        {% for user in top_3_users %}
+        <li>{{ user.name }}: ${{ user.total_spent }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Average Transaction Amount</h2>
+    <p>${{ average_spending.amount__avg }}</p>
+
+    <h2>Users with No Transactions</h2>
+    <ul>
+        {% for user in no_transaction_users %}
+        <li>{{ user.name }} - {{ user.email }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
